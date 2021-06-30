@@ -11,7 +11,7 @@ export const Accordion = (props) => {
       initial={false}
       animate={{}}
       onClick={() => setExpanded(isOpen ? false : i)}
-      className='accordion-header'
+      className='cursor-pointer'
     >
       {props.header}
     </motion.div>
@@ -32,7 +32,7 @@ export const Accordion = (props) => {
               collapsed: { opacity: 0, height: 0 }
             }}
             transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-            className='accordion-motion-content'
+            className='overflow-hidden'
           >
             <ContentWrapper>{props.content}</ContentWrapper>
           </motion.div>
@@ -53,7 +53,7 @@ export const ContentWrapper = (props) => (
   <motion.div
     variants={{ collapsed: { scale: 1 }, open: { scale: 1 } }}
     transition={{ duration: 0.8 }}
-    className='accordion-content-placeholder'
+    className='origin-center'
   >
     <Content {...props} />
   </motion.div>
